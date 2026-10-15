@@ -4,36 +4,196 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hola Mundo</title>
+    <title>Manuela Ortiz Márquez</title>
+
+    <!-- Google Fonts: Plus Jakarta Sans (fresca, moderna y legible) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
     <style>
-        body {
+        * {
+            box-sizing: border-box;
             margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+            background-color: #5C1A1B;
+            color: #ffffff;
             min-height: 100vh;
             display: flex;
-            justify-content: center;
-            align-items: center;
-            font-family: Arial, sans-serif;
+            flex-direction: column;
+            -webkit-font-smoothing: antialiased;
         }
 
-        h1 {
-            color: #8a2be2;
-            /* Morado */
+        /* Nav (#AED4E6) */
+        nav {
+            background-color: #AED4E6;
+            width: 100%;
+            padding: 1.1rem 1.5rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.8rem;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+        }
+
+        .nav-logo {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: #1a3340;
+            text-decoration: none;
+            letter-spacing: -0.3px;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 1.2rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #1a3340;
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: color 0.2s ease;
+        }
+
+        .nav-links a:hover {
+            color: #8c2155;
+        }
+
+        /* Contenedor principal a lo ancho */
+        main {
+            width: 100%;
+            padding: 2rem 1.5rem;
+            flex: 1;
+        }
+
+        /* Divs (#AF7595) */
+        .seccion-div {
+            background-color: #AF7595;
+            color: #ffffff;
+            width: 100%;
+            padding: 2rem 1.8rem;
+            margin-bottom: 1.8rem;
+            border-radius: 12px;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+            scroll-margin-top: 110px;
+        }
+
+        .seccion-div h2 {
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+            font-weight: 700;
+            letter-spacing: -0.3px;
+            border-bottom: 2px solid rgba(174, 212, 230, 0.45);
+            padding-bottom: 0.4rem;
+            display: inline-block;
+        }
+
+        .seccion-div p {
+            font-size: 1.05rem;
+            line-height: 1.7;
+            font-weight: 400;
+            color: #fdf5f9;
+        }
+
+        .seccion-div p + p {
+            margin-top: 1rem;
+        }
+
+        .seccion-div a {
+            color: #AED4E6;
+            text-decoration: none;
+            font-weight: 600;
+            border-bottom: 1px dashed #AED4E6;
+            padding-bottom: 1px;
+            transition: all 0.2s ease;
+        }
+
+        .seccion-div a:hover {
+            color: #ffffff;
+            border-bottom-style: solid;
+        }
+
+        /* Footer (#8c2155) */
+        footer {
+            background-color: #8c2155;
+            color: #ffffff;
+            width: 100%;
+            padding: 1.5rem;
             text-align: center;
-            font-size: 2.5rem;
+            font-size: 0.95rem;
+            font-weight: 500;
+            letter-spacing: 0.2px;
+            margin-top: auto;
         }
 
-        span {
-            color: black;
-            /* 8 de octubre en negro */
+        /* Responsive a pantallas medianas y grandes */
+        @media (min-width: 600px) {
+            nav {
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: center;
+                padding: 1.2rem 3rem;
+            }
+
+            main {
+                padding: 2.5rem 3rem;
+            }
+
+            .seccion-div {
+                padding: 2.5rem 2.5rem;
+            }
+
+            .seccion-div h2 {
+                font-size: 1.7rem;
+            }
+
+            .seccion-div p {
+                font-size: 1.1rem;
+            }
         }
     </style>
 </head>
 
 <body>
-    <h1>
-        Hola mundo :),<br>
-        <span> Hoy es 8 de octubre</span>
-    </h1>
+
+    <!-- Nav (#AED4E6) -->
+    <nav>
+        <a href="#" class="nav-logo">Manuela Ortiz Márquez</a>
+        <ul class="nav-links">
+            <li><a href="#experiencia">Experiencia</a></li>
+            <li><a href="#contacto">Datos de contacto</a></li>
+        </ul>
+    </nav>
+
+    <!-- Contenido -->
+    <main>
+        <div id="experiencia" class="seccion-div">
+            <h2>Experiencia</h2>
+            <p>Economista e historiadora orientada a la investigación social. Su trabajo se enfoca en el análisis de datos y contextos para comprender dinámicas territoriales y problemáticas urbanas.</p>
+            <p>Cuenta con experiencia en diversos proyectos sociales, combinando el análisis cuantitativo con una mirada cercana a las realidades comunitarias, con el objetivo de generar información clara, útil y aplicable.</p>
+        </div>
+
+        <div id="contacto" class="seccion-div">
+            <h2>Datos de contacto</h2>
+            <p>Puedes comunicarte a través del correo electrónico: <a href="mailto:manuortizmarquez.mo@gmail.com">manuortizmarquez.mo@gmail.com</a></p>
+        </div>
+    </main>
+
+    <!-- Footer (#8c2155) -->
+    <footer>
+        <p>Manuela Ortiz Márquez</p>
+    </footer>
+
 </body>
 
 </html>
