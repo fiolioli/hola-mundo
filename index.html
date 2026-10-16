@@ -4,41 +4,48 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Portafolio profesional de Manuela Ortiz Márquez - Economista e historiadora orientada a la investigación social y análisis territorial.">
+    <meta name="description" content="Portafolio profesional de Manuela Ortiz Márquez - Economista e historiadora especializada en análisis territorial e investigación social.">
     <title>Manuela Ortiz Márquez | Economista & Investigadora Social</title>
 
-    <!-- Google Fonts: Plus Jakarta Sans -->
+    <!-- Google Fonts: Syne (Titulares sofisticados) + Plus Jakarta Sans (Cuerpo) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Syne:wght@600;700;800&display=swap" rel="stylesheet">
 
     <style>
         :root {
-            --bg-base: #4a1516;
-            --bg-gradient: radial-gradient(circle at 15% 20%, #681f21 0%, #401213 100%);
+            /* Paleta Armonizada: Midnight Navy & Deep Wine / Rose Gold Accents */
+            --bg-deep: #070c14;
+            --bg-elevated: #0d1624;
             
-            --nav-bg: rgba(174, 212, 230, 0.94);
-            --nav-text: #0f2430;
-            --nav-accent: #8c2155;
+            /* Gradientes de fondo ambientales */
+            --mesh-primary: radial-gradient(at 15% 15%, rgba(140, 33, 85, 0.22) 0px, transparent 55%);
+            --mesh-secondary: radial-gradient(at 85% 25%, rgba(30, 68, 102, 0.28) 0px, transparent 50%);
+            --mesh-tertiary: radial-gradient(at 50% 80%, rgba(92, 26, 27, 0.18) 0px, transparent 60%);
 
-            --hero-bg: linear-gradient(135deg, #0b1928 0%, #172d42 50%, #1e3a53 100%);
-            --hero-border: #AED4E6;
-            
-            --card-bg: rgba(175, 117, 149, 0.22);
-            --card-border: rgba(255, 255, 255, 0.14);
-            --card-solid: #8b4c70;
+            /* Superficies Glassmorphism */
+            --glass-surface: rgba(14, 23, 38, 0.65);
+            --glass-surface-hover: rgba(19, 32, 53, 0.85);
+            --glass-border: rgba(174, 212, 230, 0.14);
+            --glass-border-highlight: rgba(174, 212, 230, 0.35);
 
-            --accent-cyan: #AED4E6;
-            --accent-cyan-hover: #cbe6f5;
-            --accent-berry: #8c2155;
-            --text-main: #ffffff;
-            --text-muted: #e2d6dd;
-            
-            --radius-lg: 18px;
+            /* Acentos */
+            --accent-cyan: #79c5e8;
+            --accent-cyan-glow: rgba(121, 197, 232, 0.25);
+            --accent-rose: #d4739d;
+            --accent-wine: #8c2155;
+
+            /* Tipografía */
+            --text-heading: #f8fafc;
+            --text-body: #cbd5e1;
+            --text-muted: #8496ad;
+
+            /* Sombras & Radios */
+            --radius-xl: 20px;
             --radius-md: 12px;
             --radius-sm: 8px;
-            --shadow-subtle: 0 10px 30px rgba(0, 0, 0, 0.25);
-            --shadow-hover: 0 16px 40px rgba(0, 0, 0, 0.35);
+            --shadow-card: 0 16px 40px -10px rgba(0, 0, 0, 0.55), 0 0 1px 1px var(--glass-border);
+            --shadow-glow: 0 20px 50px -10px rgba(121, 197, 232, 0.15);
         }
 
         * {
@@ -53,361 +60,556 @@
 
         body {
             font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
-            background: var(--bg-base);
-            background-image: var(--bg-gradient);
+            background-color: var(--bg-deep);
+            background-image: var(--mesh-primary), var(--mesh-secondary), var(--mesh-tertiary);
             background-attachment: fixed;
-            color: var(--text-main);
+            background-size: cover;
+            color: var(--text-body);
             min-height: 100vh;
             display: flex;
             flex-direction: column;
-            line-height: 1.6;
+            line-height: 1.7;
             -webkit-font-smoothing: antialiased;
+            overflow-x: hidden;
+            position: relative;
         }
 
-        /* Header & Navbar con Glassmorphism */
+        /* Iluminación ambiental sutil superior */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 1000px;
+            height: 380px;
+            background: radial-gradient(ellipse at top, rgba(121, 197, 232, 0.08), transparent 70%);
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        /* Header sofisticado & Navbar */
         header {
             position: sticky;
             top: 0;
             z-index: 100;
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            background-color: var(--nav-bg);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.3);
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
-            transition: all 0.3s ease;
+            background: rgba(7, 12, 20, 0.75);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+            transition: border-color 0.3s ease;
         }
 
         nav {
-            max-width: 1080px;
+            max-width: 1140px;
             margin: 0 auto;
-            padding: 1rem 1.5rem;
+            padding: 1.1rem 2rem;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            gap: 1rem;
         }
 
-        .nav-logo {
+        .brand {
             display: flex;
             align-items: center;
-            gap: 0.6rem;
-            font-size: 1.15rem;
-            font-weight: 800;
-            color: var(--nav-text);
+            gap: 0.9rem;
             text-decoration: none;
-            letter-spacing: -0.4px;
+            color: var(--text-heading);
         }
 
-        .nav-logo-badge {
-            display: inline-flex;
+        .brand-monogram {
+            width: 38px;
+            height: 38px;
+            background: linear-gradient(135deg, var(--accent-wine), var(--bg-elevated));
+            border: 1px solid var(--accent-rose);
+            border-radius: 10px;
+            display: flex;
             align-items: center;
             justify-content: center;
-            width: 32px;
-            height: 32px;
-            background: #1a3340;
-            color: #ffffff;
-            border-radius: 8px;
-            font-size: 0.85rem;
+            font-family: 'Syne', sans-serif;
+            font-weight: 800;
+            font-size: 0.95rem;
+            color: var(--accent-cyan);
+            box-shadow: 0 4px 14px rgba(140, 33, 85, 0.3);
+        }
+
+        .brand-text {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .brand-name {
+            font-family: 'Syne', sans-serif;
             font-weight: 700;
+            font-size: 1.12rem;
+            letter-spacing: -0.2px;
+            color: #ffffff;
+        }
+
+        .brand-subtitle {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
         }
 
         .nav-links {
             list-style: none;
             display: flex;
             align-items: center;
-            gap: 0.5rem;
+            gap: 0.6rem;
         }
 
         .nav-links a {
             text-decoration: none;
-            color: var(--nav-text);
-            font-weight: 600;
-            font-size: 0.92rem;
-            padding: 0.5rem 0.9rem;
-            border-radius: var(--radius-sm);
-            transition: all 0.2s ease;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            font-weight: 500;
+            padding: 0.55rem 1.1rem;
+            border-radius: 30px;
+            transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+            position: relative;
         }
 
         .nav-links a:hover {
-            color: #ffffff;
-            background-color: var(--nav-accent);
+            color: var(--text-heading);
+            background: rgba(255, 255, 255, 0.06);
         }
 
-        /* Contenedor Principal */
+        .nav-cta {
+            background: rgba(121, 197, 232, 0.1) !important;
+            color: var(--accent-cyan) !important;
+            border: 1px solid rgba(121, 197, 232, 0.25);
+        }
+
+        .nav-cta:hover {
+            background: var(--accent-cyan) !important;
+            color: var(--bg-deep) !important;
+            box-shadow: 0 0 20px var(--accent-cyan-glow);
+        }
+
+        /* Layout Principal */
         main {
             width: 100%;
-            max-width: 1080px;
+            max-width: 1140px;
             margin: 0 auto;
-            padding: 2.2rem 1.5rem;
+            padding: 3rem 2rem 5rem;
             flex: 1;
             display: flex;
             flex-direction: column;
-            gap: 2rem;
+            gap: 2.8rem;
+            z-index: 1;
         }
 
-        /* Hero Section */
-        .hero {
-            background: var(--hero-bg);
-            border-radius: var(--radius-lg);
-            padding: 2.5rem 2rem;
-            border: 1px solid rgba(174, 212, 230, 0.25);
-            border-left: 6px solid var(--accent-cyan);
-            box-shadow: var(--shadow-subtle);
+        /* Hero Avanzado */
+        .hero-banner {
+            position: relative;
+            background: var(--glass-surface);
+            border: 1px solid var(--glass-border);
+            border-radius: var(--radius-xl);
+            padding: 3.5rem 3rem;
+            box-shadow: var(--shadow-card);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
             display: grid;
-            grid-template-columns: auto 1fr;
+            grid-template-columns: 1fr auto;
             align-items: center;
-            gap: 1.8rem;
+            gap: 3rem;
+            overflow: hidden;
+        }
+
+        .hero-banner::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, rgba(121, 197, 232, 0.05) 0%, rgba(140, 33, 85, 0.06) 100%);
+            pointer-events: none;
+        }
+
+        .hero-content {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            gap: 1.2rem;
+            max-width: 650px;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.78rem;
+            font-weight: 600;
+            letter-spacing: 0.8px;
+            text-transform: uppercase;
+            color: var(--accent-cyan);
+            background: rgba(121, 197, 232, 0.08);
+            border: 1px solid rgba(121, 197, 232, 0.2);
+            padding: 0.35rem 0.9rem;
+            border-radius: 24px;
+            width: fit-content;
+        }
+
+        .hero-badge::before {
+            content: '';
+            width: 7px;
+            height: 7px;
+            border-radius: 50%;
+            background: var(--accent-cyan);
+            box-shadow: 0 0 8px var(--accent-cyan);
+        }
+
+        .hero-title {
+            font-family: 'Syne', sans-serif;
+            font-size: 2.7rem;
+            font-weight: 800;
+            line-height: 1.15;
+            letter-spacing: -1px;
+            color: var(--text-heading);
+        }
+
+        .hero-title span {
+            background: linear-gradient(135deg, #ffffff 40%, var(--accent-cyan) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero-description {
+            font-size: 1.12rem;
+            color: var(--text-body);
+            font-weight: 400;
+            line-height: 1.7;
+        }
+
+        /* Avatar del Hero con Carita Feliz */
+        .hero-visual {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .avatar-aura {
+            position: relative;
+            width: 140px;
+            height: 140px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            background: linear-gradient(145deg, rgba(140, 33, 85, 0.25), rgba(30, 68, 102, 0.35));
+            border: 1px solid rgba(174, 212, 230, 0.25);
+            box-shadow: 0 0 50px rgba(121, 197, 232, 0.15), inset 0 0 25px rgba(255, 255, 255, 0.05);
+            animation: floatOrb 6s ease-in-out infinite;
+        }
+
+        .avatar-aura::after {
+            content: '';
+            position: absolute;
+            inset: -8px;
+            border-radius: 50%;
+            border: 1px dashed rgba(121, 197, 232, 0.3);
+            animation: spinRing 25s linear infinite;
+        }
+
+        .avatar-emoji {
+            font-size: 4rem;
+            line-height: 1;
+            user-select: none;
+            filter: drop-shadow(0 8px 18px rgba(0, 0, 0, 0.45));
+            transition: transform 0.3s ease;
+        }
+
+        .avatar-aura:hover .avatar-emoji {
+            transform: scale(1.12) rotate(6deg);
+        }
+
+        @keyframes floatOrb {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-9px); }
+        }
+
+        @keyframes spinRing {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        /* Grid de Contenido Principal */
+        .content-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 2rem;
+            align-items: start;
+        }
+
+        /* Tarjeta Estilizada */
+        .panel {
+            background: var(--glass-surface);
+            border: 1px solid var(--glass-border);
+            border-radius: var(--radius-xl);
+            padding: 2.6rem;
+            box-shadow: var(--shadow-card);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
             position: relative;
             overflow: hidden;
         }
 
-        .hero::after {
-            content: '';
-            position: absolute;
-            top: -50px;
-            right: -50px;
-            width: 160px;
-            height: 160px;
-            background: radial-gradient(circle, rgba(174, 212, 230, 0.15) 0%, transparent 70%);
-            border-radius: 50%;
-            pointer-events: none;
+        .panel:hover {
+            border-color: var(--glass-border-highlight);
+            box-shadow: var(--shadow-glow), var(--shadow-card);
+            transform: translateY(-3px);
         }
 
-        .hero-avatar-wrapper {
-            position: relative;
+        .panel-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 1.8rem;
+            padding-bottom: 1.2rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
         }
 
-        .hero-emoji {
-            font-size: 3rem;
-            line-height: 1;
-            width: 80px;
-            height: 80px;
+        .panel-title-group {
+            display: flex;
+            align-items: center;
+            gap: 0.9rem;
+        }
+
+        .panel-icon-wrap {
+            width: 42px;
+            height: 42px;
+            border-radius: var(--radius-md);
+            background: rgba(121, 197, 232, 0.08);
+            border: 1px solid rgba(121, 197, 232, 0.2);
             display: flex;
             align-items: center;
             justify-content: center;
-            background: rgba(174, 212, 230, 0.12);
-            border: 2px solid rgba(174, 212, 230, 0.3);
-            border-radius: 50%;
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
-            animation: softPulse 3.5s infinite ease-in-out;
-            user-select: none;
+            font-size: 1.2rem;
+            color: var(--accent-cyan);
         }
 
-        @keyframes softPulse {
-            0%, 100% {
-                transform: scale(1);
-            }
-            50% {
-                transform: scale(1.05);
-            }
+        .panel h2 {
+            font-family: 'Syne', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--text-heading);
+            letter-spacing: -0.3px;
         }
 
-        .hero-info {
+        .panel-body p {
+            font-size: 1.05rem;
+            color: var(--text-body);
+            line-height: 1.8;
+            margin-bottom: 1.2rem;
+        }
+
+        .panel-body p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* Métricas / Highlights Integrados */
+        .metrics-row {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1rem;
+            margin: 2rem 0 1.5rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.06);
+        }
+
+        .metric-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            border-radius: var(--radius-md);
+            padding: 1.1rem 1rem;
+            text-align: center;
+        }
+
+        .metric-num {
+            font-family: 'Syne', sans-serif;
+            font-size: 1.35rem;
+            font-weight: 700;
+            color: var(--accent-cyan);
+            margin-bottom: 0.2rem;
+        }
+
+        .metric-label {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.6px;
+            color: var(--text-muted);
+        }
+
+        /* Tags de Competencias */
+        .tags-wrapper {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.65rem;
+            margin-top: 1.8rem;
+        }
+
+        .tag {
+            font-size: 0.8rem;
+            font-weight: 500;
+            color: #dbeafe;
+            background: rgba(121, 197, 232, 0.08);
+            border: 1px solid rgba(121, 197, 232, 0.16);
+            padding: 0.4rem 0.9rem;
+            border-radius: 30px;
+            transition: all 0.2s ease;
+        }
+
+        .tag:hover {
+            background: rgba(121, 197, 232, 0.16);
+            border-color: var(--accent-cyan);
+            color: #ffffff;
+        }
+
+        /* Columna Lateral (Contacto & Perfil) */
+        .sidebar {
             display: flex;
             flex-direction: column;
-            gap: 0.6rem;
+            gap: 1.8rem;
         }
 
-        .hero-tag {
-            align-self: flex-start;
-            font-size: 0.75rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            color: var(--accent-cyan);
-            background: rgba(174, 212, 230, 0.1);
-            padding: 0.25rem 0.75rem;
-            border-radius: 20px;
-            border: 1px solid rgba(174, 212, 230, 0.2);
+        .contact-card {
+            background: linear-gradient(160deg, rgba(14, 23, 38, 0.8) 0%, rgba(20, 34, 56, 0.85) 100%);
+            border: 1px solid var(--glass-border-highlight);
+            border-radius: var(--radius-xl);
+            padding: 2.2rem;
+            box-shadow: var(--shadow-card);
+            backdrop-filter: blur(16px);
+            display: flex;
+            flex-direction: column;
+            gap: 1.3rem;
         }
 
-        .hero h1 {
-            font-size: 1.8rem;
-            font-weight: 800;
-            letter-spacing: -0.5px;
-            color: #ffffff;
-            line-height: 1.25;
-        }
-
-        .hero p {
-            font-size: 1.05rem;
-            color: #d1dbe6;
-            max-width: 680px;
-            font-weight: 400;
-        }
-
-        /* Secciones de Contenido */
-        .seccion-card {
-            background: var(--card-solid);
-            background: linear-gradient(145deg, rgba(162, 85, 126, 0.85) 0%, rgba(130, 56, 95, 0.9) 100%);
-            border-radius: var(--radius-lg);
-            padding: 2.2rem 2rem;
-            border: 1px solid var(--card-border);
-            box-shadow: var(--shadow-subtle);
-            scroll-margin-top: 90px;
-            transition: transform 0.25s ease, box-shadow 0.25s ease;
-        }
-
-        .seccion-card:hover {
-            transform: translateY(-3px);
-            box-shadow: var(--shadow-hover);
-        }
-
-        .seccion-header {
+        .contact-btn {
             display: flex;
             align-items: center;
-            gap: 0.8rem;
-            margin-bottom: 1.3rem;
-            padding-bottom: 0.75rem;
-            border-bottom: 2px solid rgba(174, 212, 230, 0.3);
-        }
-
-        .seccion-icon {
-            font-size: 1.4rem;
-        }
-
-        .seccion-card h2 {
-            font-size: 1.55rem;
+            justify-content: center;
+            gap: 0.7rem;
+            background: linear-gradient(135deg, var(--accent-cyan), #4a9ec4);
+            color: #07131d;
             font-weight: 700;
-            letter-spacing: -0.3px;
-            color: #ffffff;
-        }
-
-        .seccion-body p {
-            font-size: 1.05rem;
-            line-height: 1.75;
-            color: #faeef5;
-            font-weight: 400;
-        }
-
-        .seccion-body p + p {
-            margin-top: 1.1rem;
-        }
-
-        /* Badges / Chips de Enfoque */
-        .pill-container {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.6rem;
-            margin-top: 1.4rem;
-        }
-
-        .pill {
-            font-size: 0.82rem;
-            font-weight: 600;
-            background: rgba(255, 255, 255, 0.15);
-            color: #ffffff;
-            padding: 0.35rem 0.85rem;
-            border-radius: 20px;
-            backdrop-filter: blur(4px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-        }
-
-        /* Tarjeta de Contacto Interactiva */
-        .contact-box {
-            display: flex;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 1.2rem;
-            background: rgba(0, 0, 0, 0.18);
-            border: 1px solid rgba(174, 212, 230, 0.25);
-            padding: 1.2rem 1.4rem;
+            font-size: 0.95rem;
+            padding: 0.9rem 1.4rem;
             border-radius: var(--radius-md);
-            margin-top: 1rem;
+            text-decoration: none;
+            transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+            box-shadow: 0 8px 24px var(--accent-cyan-glow);
         }
 
-        .contact-mail-link {
+        .contact-btn:hover {
+            transform: translateY(-2px);
+            filter: brightness(1.08);
+            box-shadow: 0 12px 30px rgba(121, 197, 232, 0.4);
+        }
+
+        .availability-pill {
             display: inline-flex;
             align-items: center;
-            gap: 0.5rem;
-            color: #ffffff;
-            background: rgba(174, 212, 230, 0.25);
-            border: 1px solid var(--accent-cyan);
-            padding: 0.65rem 1.2rem;
-            border-radius: var(--radius-sm);
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 1rem;
-            transition: all 0.25s ease;
+            gap: 0.55rem;
+            font-size: 0.78rem;
+            color: #86efac;
+            background: rgba(134, 239, 172, 0.08);
+            border: 1px solid rgba(134, 239, 172, 0.2);
+            padding: 0.4rem 0.85rem;
+            border-radius: 20px;
+            width: fit-content;
         }
 
-        .contact-mail-link:hover {
-            background: var(--accent-cyan);
-            color: var(--nav-text);
-            transform: translateY(-2px);
-            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+        .availability-pill::before {
+            content: '';
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: #86efac;
+            box-shadow: 0 0 8px #86efac;
         }
 
-        /* Footer */
+        /* Footer Armonizado */
         footer {
-            background-color: var(--accent-berry);
-            color: rgba(255, 255, 255, 0.85);
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            padding: 1.8rem 1.5rem;
-            text-align: center;
-            font-size: 0.92rem;
-            font-weight: 500;
+            border-top: 1px solid rgba(255, 255, 255, 0.07);
+            background: rgba(5, 9, 15, 0.8);
+            backdrop-filter: blur(12px);
+            padding: 2.2rem 2rem;
             margin-top: auto;
         }
 
-        footer strong {
-            color: #ffffff;
+        .footer-inner {
+            max-width: 1140px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+            font-size: 0.88rem;
+            color: var(--text-muted);
         }
 
-        /* Adaptación Responsive */
+        .footer-inner strong {
+            color: var(--text-heading);
+            font-weight: 600;
+        }
+
+        /* Responsive Breakpoints */
+        @media (max-width: 960px) {
+            .hero-banner {
+                grid-template-columns: 1fr;
+                padding: 2.8rem 2rem;
+                text-align: center;
+            }
+
+            .hero-content {
+                max-width: 100%;
+                align-items: center;
+            }
+
+            .content-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .metrics-row {
+                grid-template-columns: 1fr;
+            }
+        }
+
         @media (max-width: 640px) {
             nav {
                 flex-direction: column;
-                gap: 0.8rem;
-                padding: 0.9rem 1rem;
+                gap: 1rem;
+                padding: 1rem;
             }
 
-            .hero {
-                grid-template-columns: 1fr;
-                text-align: center;
-                gap: 1.2rem;
-                padding: 2rem 1.4rem;
-                border-left-width: 4px;
-            }
-
-            .hero-avatar-wrapper {
-                margin: 0 auto;
-            }
-
-            .hero-tag {
-                align-self: center;
-            }
-
-            .hero h1 {
-                font-size: 1.45rem;
-            }
-
-            .hero p {
-                font-size: 0.98rem;
-            }
-
-            .seccion-card {
-                padding: 1.6rem 1.3rem;
-            }
-
-            .contact-box {
-                flex-direction: column;
-                align-items: stretch;
-                text-align: center;
-            }
-
-            .contact-mail-link {
-                justify-content: center;
-            }
-        }
-
-        @media (min-width: 641px) and (max-width: 900px) {
             main {
-                padding: 2rem;
+                padding: 1.5rem 1rem 3rem;
+                gap: 1.8rem;
             }
 
-            .hero {
-                padding: 2.2rem 1.8rem;
+            .hero-title {
+                font-size: 2rem;
+            }
+
+            .avatar-aura {
+                width: 110px;
+                height: 110px;
+            }
+
+            .avatar-emoji {
+                font-size: 3.2rem;
+            }
+
+            .panel {
+                padding: 1.8rem 1.4rem;
+            }
+
+            .footer-inner {
+                flex-direction: column;
+                text-align: center;
             }
         }
     </style>
@@ -415,75 +617,116 @@
 
 <body>
 
-    <!-- Header con navegación sticky -->
+    <!-- Header & Navegación -->
     <header>
         <nav aria-label="Navegación principal">
-            <a href="#" class="nav-logo" aria-label="Inicio">
-                <span class="nav-logo-badge">MO</span>
-                <span>Manuela Ortiz Márquez</span>
+            <a href="#" class="brand" aria-label="Inicio">
+                <div class="brand-monogram">MO</div>
+                <div class="brand-text">
+                    <span class="brand-name">Manuela Ortiz Márquez</span>
+                    <span class="brand-subtitle">Economista & Historiadora</span>
+                </div>
             </a>
             <ul class="nav-links">
                 <li><a href="#experiencia">Experiencia</a></li>
-                <li><a href="#contacto">Contacto</a></li>
+                <li><a href="#enfoque">Enfoque</a></li>
+                <li><a href="#contacto" class="nav-cta">Contacto</a></li>
             </ul>
         </nav>
     </header>
 
-    <!-- Contenedor Principal -->
+    <!-- Contenido Principal -->
     <main>
-        <!-- Sección Hero Integrada -->
-        <section class="hero" aria-labelledby="hero-title">
-            <div class="hero-avatar-wrapper">
-                <div class="hero-emoji" role="img" aria-label="Carita feliz sonriente">😊</div>
+        <!-- Hero Sofisticado -->
+        <section class="hero-banner" aria-labelledby="hero-heading">
+            <div class="hero-content">
+                <div class="hero-badge">Investigación & Dinámicas Urbanas</div>
+                <h1 id="hero-heading" class="hero-title">
+                    Transformando datos en <span>impacto social</span>
+                </h1>
+                <p class="hero-description">
+                    Economista e investigadora social con perspectiva histórica. Especializada en la articulación de métodos cuantitativos rigurosos con el análisis contextual para resolver desafíos territoriales y comunitarios.
+                </p>
             </div>
-            <div class="hero-info">
-                <span class="hero-tag">Investigación & Análisis Social</span>
-                <h1 id="hero-title">¡Hola! Te doy la bienvenida</h1>
-                <p>Economista e investigadora social con enfoque en dinámicas territoriales, análisis cuantitativo y desarrollo de información estratégica con sentido humano.</p>
+
+            <div class="hero-visual">
+                <div class="avatar-aura" title="¡Bienvenido/a!">
+                    <div class="avatar-emoji" role="img" aria-label="Carita feliz">😊</div>
+                </div>
             </div>
         </section>
 
-        <!-- Sección de Experiencia -->
-        <article id="experiencia" class="seccion-card">
-            <div class="seccion-header">
-                <span class="seccion-icon" aria-hidden="true">📊</span>
-                <h2>Experiencia</h2>
-            </div>
-            <div class="seccion-body">
-                <p>Economista e historiadora orientada a la investigación social. Su trabajo se enfoca en el análisis de datos y contextos para comprender dinámicas territoriales y problemáticas urbanas.</p>
-                <p>Cuenta con experiencia en diversos proyectos sociales, combinando el análisis cuantitativo con una mirada cercana a las realidades comunitarias, con el objetivo de generar información clara, útil y aplicable.</p>
-                
-                <div class="pill-container" aria-label="Áreas de especialidad">
-                    <span class="pill">Análisis Territorial</span>
-                    <span class="pill">Investigación Social</span>
-                    <span class="pill">Datos Cuantitativos</span>
-                    <span class="pill">Enfoque Comunitario</span>
+        <!-- Grid de Contenido Complejo -->
+        <div class="content-grid">
+            <!-- Columna Principal: Experiencia y Metodología -->
+            <article id="experiencia" class="panel">
+                <div class="panel-header">
+                    <div class="panel-title-group">
+                        <div class="panel-icon-wrap" aria-hidden="true">📈</div>
+                        <h2>Experiencia & Trayectoria</h2>
+                    </div>
                 </div>
-            </div>
-        </article>
 
-        <!-- Sección de Contacto -->
-        <article id="contacto" class="seccion-card">
-            <div class="seccion-header">
-                <span class="seccion-icon" aria-hidden="true">✉️</span>
-                <h2>Datos de contacto</h2>
-            </div>
-            <div class="seccion-body">
-                <p>¿Tienes una iniciativa de investigación, consulta o propuesta de colaboración? Puedes escribirme directamente:</p>
-                
-                <div class="contact-box">
-                    <a href="mailto:manuortizmarquez.mo@gmail.com" class="contact-mail-link">
-                        <span aria-hidden="true">📧</span>
-                        <span>manuortizmarquez.mo@gmail.com</span>
+                <div class="panel-body">
+                    <p>
+                        Su trayectoria se consolida en la intersección entre la ciencia económica y la comprensión histórica. Su labor principal se orienta al diseño, recolección y análisis de datos empíricos que permiten decodificar las dinámicas territoriales y problemáticas urbanas contemporáneas.
+                    </p>
+                    <p>
+                        Ha colaborado activamente en múltiples proyectos de desarrollo e investigación social, integrando modelos de análisis cuantitativo con un trabajo cercano y empático junto a comunidades, asegurando que los hallazgos generen recomendaciones claras, pertinentes y de alto valor estratégico.
+                    </p>
+
+                    <!-- Indicadores Clave -->
+                    <div class="metrics-row" aria-label="Aspectos clave de trabajo">
+                        <div class="metric-card">
+                            <div class="metric-num">Datos</div>
+                            <div class="metric-label">Análisis Cuantitativo</div>
+                        </div>
+                        <div class="metric-card">
+                            <div class="metric-num">Territorio</div>
+                            <div class="metric-label">Dinámicas Urbanas</div>
+                        </div>
+                        <div class="metric-card">
+                            <div class="metric-num">Social</div>
+                            <div class="metric-label">Impacto Comunitario</div>
+                        </div>
+                    </div>
+
+                    <div id="enfoque" class="tags-wrapper" aria-label="Áreas de especialidad">
+                        <span class="tag">Investigación Aplicada</span>
+                        <span class="tag">Economía Urbana</span>
+                        <span class="tag">Análisis Territorial</span>
+                        <span class="tag">Contexto Histórico</span>
+                        <span class="tag">Políticas Públicas</span>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Columna Lateral: Contacto & Disponibilidad -->
+            <aside class="sidebar">
+                <div id="contacto" class="contact-card">
+                    <div class="availability-pill">Disponible para proyectos</div>
+                    <div class="panel-title-group">
+                        <div class="panel-icon-wrap" aria-hidden="true">✉️</div>
+                        <h2>Conectemos</h2>
+                    </div>
+                    <p style="font-size: 0.95rem; color: var(--text-body); line-height: 1.6;">
+                        Abierta a colaboraciones en consultoría, iniciativas académicas o proyectos de impacto territorial.
+                    </p>
+                    <a href="mailto:manuortizmarquez.mo@gmail.com" class="contact-btn">
+                        <span>Enviar correo</span>
+                        <span aria-hidden="true">→</span>
                     </a>
                 </div>
-            </div>
-        </article>
+            </aside>
+        </div>
     </main>
 
-    <!-- Pie de página -->
+    <!-- Footer -->
     <footer>
-        <p>© 2026 <strong>Manuela Ortiz Márquez</strong> — Economista e Historiadora</p>
+        <div class="footer-inner">
+            <p>© 2026 <strong>Manuela Ortiz Márquez</strong>. Todos los derechos reservados.</p>
+            <p>Economía, Historia & Territorio</p>
+        </div>
     </footer>
 
 </body>
