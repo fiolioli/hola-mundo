@@ -7,52 +7,41 @@
     <meta name="description" content="Portafolio profesional de Manuela Ortiz Márquez - Economista e historiadora especializada en análisis territorial e investigación social.">
     <title>Manuela Ortiz Márquez | Economista & Investigadora Social</title>
 
-    <!-- Google Fonts: Syne (Titulares sofisticados) + Plus Jakarta Sans (Cuerpo) -->
+    <!-- Google Fonts: Cormorant Garamond (Serif sofisticada, poética y boho) + Plus Jakarta Sans (Cuerpo legible y armónico) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Syne:wght@600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
 
     <style>
         :root {
-            /* Paleta Original Armonizada Sofisticada */
-            --vino-base: #5C1A1B;
-            --vino-oscuro: #3d1011;
-            --magenta-acento: #8c2155;
-            --malva-suave: #AF7595;
-            --celeste-claro: #AED4E6;
-            --celeste-brillo: rgba(174, 212, 230, 0.25);
-            --azul-noche: #0b1a2d;
-
-            /* Gradientes de fondo ambientales basados en la paleta original */
-            --bg-deep: #3b0e10;
-            --mesh-primary: radial-gradient(at 10% 15%, rgba(140, 33, 85, 0.45) 0px, transparent 55%);
-            --mesh-secondary: radial-gradient(at 90% 20%, rgba(174, 212, 230, 0.22) 0px, transparent 50%);
-            --mesh-tertiary: radial-gradient(at 50% 85%, rgba(175, 117, 149, 0.35) 0px, transparent 60%);
-            --mesh-quaternary: radial-gradient(at 75% 75%, rgba(11, 26, 45, 0.5) 0px, transparent 55%);
-
-            /* Superficies Glassmorphism con tinte de la paleta original */
-            --glass-surface: rgba(45, 14, 25, 0.72);
-            --glass-surface-hover: rgba(60, 18, 33, 0.88);
-            --glass-border: rgba(174, 212, 230, 0.2);
-            --glass-border-highlight: rgba(174, 212, 230, 0.45);
-
-            /* Acentos */
-            --accent-cyan: #AED4E6;
-            --accent-cyan-glow: rgba(174, 212, 230, 0.35);
-            --accent-rose: #d69dbb;
-            --accent-wine: #8c2155;
+            /* Paleta Boho Chic Elegante: Terrosa, Cálida y Serena */
+            --bg-canvas: #faf6f0;           /* Lino / Alabastro cálido */
+            --bg-canvas-soft: #f4ece2;      /* Arena suave */
+            --card-surface: #ffffff;        /* Blanco cálido puro */
+            --card-subtle: #f9f5ef;         /* Acento marfil */
+            
+            /* Tonos tierra boho refinados */
+            --terracotta: #c2785c;          /* Terracota quemado suave */
+            --terracotta-dark: #a35d43;     /* Terracota profundo */
+            --terracotta-light: #f5ebe6;    /* Rosa terracota pastel */
+            --sage-leaf: #929d89;           /* Verde salvia orgánico */
+            --sage-soft: #eaf0e7;           /* Salvia pastel */
+            --clay-rose: #d8a48f;           /* Arcilla rosa */
+            --warm-clay: #7c4a36;           /* Acento oscuro café-arcilla */
 
             /* Tipografía */
-            --text-heading: #ffffff;
-            --text-body: #fceef4;
-            --text-muted: #e0cad6;
+            --text-title: #2b2622;          /* Espresso profundo / carbón cálido */
+            --text-body: #574e47;           /* Taupe tierra para lectura descansada */
+            --text-muted: #8c8077;          /* Lino tostado suave */
 
-            /* Sombras & Radios */
-            --radius-xl: 20px;
-            --radius-md: 12px;
-            --radius-sm: 8px;
-            --shadow-card: 0 16px 40px -10px rgba(0, 0, 0, 0.5), 0 0 1px 1px var(--glass-border);
-            --shadow-glow: 0 20px 50px -10px rgba(174, 212, 230, 0.25);
+            /* Bordes & Sombras Suaves */
+            --border-organic: rgba(194, 120, 92, 0.18);
+            --border-soft: rgba(0, 0, 0, 0.05);
+            --shadow-boho: 0 14px 34px -10px rgba(124, 74, 54, 0.08), 0 2px 10px rgba(0, 0, 0, 0.02);
+            --shadow-hover: 0 20px 42px -12px rgba(124, 74, 54, 0.14);
+
+            --radius-organic: 24px;
+            --radius-pill: 40px;
         }
 
         * {
@@ -67,50 +56,51 @@
 
         body {
             font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
-            background-color: var(--bg-deep);
-            background-image: var(--mesh-primary), var(--mesh-secondary), var(--mesh-tertiary), var(--mesh-quaternary);
+            background-color: var(--bg-canvas);
+            /* Manchas de luz botánicas y orgánicas estilo acuarela */
+            background-image: 
+                radial-gradient(at 10% 12%, rgba(216, 164, 143, 0.22) 0px, transparent 48%),
+                radial-gradient(at 88% 22%, rgba(146, 157, 137, 0.25) 0px, transparent 45%),
+                radial-gradient(at 50% 75%, rgba(194, 120, 92, 0.15) 0px, transparent 55%),
+                radial-gradient(at 85% 90%, rgba(244, 236, 226, 0.8) 0px, transparent 50%);
             background-attachment: fixed;
             background-size: cover;
             color: var(--text-body);
             min-height: 100vh;
             display: flex;
             flex-direction: column;
-            line-height: 1.7;
+            line-height: 1.8;
             -webkit-font-smoothing: antialiased;
-            overflow-x: hidden;
             position: relative;
         }
 
-        /* Iluminación ambiental sutil superior */
+        /* Textura orgánica sutil en el fondo */
         body::before {
             content: '';
             position: fixed;
-            top: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 1000px;
-            height: 380px;
-            background: radial-gradient(ellipse at top, rgba(174, 212, 230, 0.12), transparent 70%);
+            inset: 0;
+            background-image: radial-gradient(rgba(124, 74, 54, 0.03) 1px, transparent 1px);
+            background-size: 28px 28px;
             pointer-events: none;
             z-index: 0;
         }
 
-        /* Header sofisticado & Navbar */
+        /* Header & Navbar Boho */
         header {
             position: sticky;
             top: 0;
             z-index: 100;
-            background: rgba(35, 10, 18, 0.82);
-            backdrop-filter: blur(16px);
-            -webkit-backdrop-filter: blur(16px);
-            border-bottom: 1px solid rgba(174, 212, 230, 0.15);
-            transition: border-color 0.3s ease;
+            background: rgba(250, 246, 240, 0.82);
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
+            border-bottom: 1px solid var(--border-soft);
+            transition: all 0.3s ease;
         }
 
         nav {
-            max-width: 1140px;
+            max-width: 1080px;
             margin: 0 auto;
-            padding: 1.1rem 2rem;
+            padding: 1.2rem 2rem;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -119,25 +109,25 @@
         .brand {
             display: flex;
             align-items: center;
-            gap: 0.9rem;
+            gap: 1rem;
             text-decoration: none;
-            color: var(--text-heading);
+            color: var(--text-title);
         }
 
         .brand-monogram {
-            width: 38px;
-            height: 38px;
-            background: linear-gradient(135deg, var(--accent-wine), #2d0e14);
-            border: 1px solid var(--accent-cyan);
-            border-radius: 10px;
+            width: 42px;
+            height: 42px;
+            background: var(--terracotta-light);
+            border: 1px solid var(--terracotta);
+            border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-family: 'Syne', sans-serif;
-            font-weight: 800;
-            font-size: 0.95rem;
-            color: var(--accent-cyan);
-            box-shadow: 0 4px 14px rgba(140, 33, 85, 0.3);
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 700;
+            font-size: 1.25rem;
+            color: var(--terracotta-dark);
+            letter-spacing: -0.5px;
         }
 
         .brand-text {
@@ -146,91 +136,98 @@
         }
 
         .brand-name {
-            font-family: 'Syne', sans-serif;
+            font-family: 'Cormorant Garamond', serif;
             font-weight: 700;
-            font-size: 1.12rem;
-            letter-spacing: -0.2px;
-            color: #ffffff;
+            font-size: 1.35rem;
+            letter-spacing: 0.2px;
+            color: var(--text-title);
+            line-height: 1.2;
         }
 
         .brand-subtitle {
-            font-size: 0.75rem;
+            font-size: 0.76rem;
             color: var(--text-muted);
-            letter-spacing: 0.5px;
+            letter-spacing: 1.5px;
             text-transform: uppercase;
+            font-weight: 500;
         }
 
         .nav-links {
             list-style: none;
             display: flex;
             align-items: center;
-            gap: 0.6rem;
+            gap: 0.8rem;
         }
 
         .nav-links a {
             text-decoration: none;
-            color: var(--text-muted);
-            font-size: 0.9rem;
+            color: var(--text-body);
+            font-size: 0.92rem;
             font-weight: 500;
-            padding: 0.55rem 1.1rem;
-            border-radius: 30px;
-            transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
-            position: relative;
+            padding: 0.5rem 1.1rem;
+            border-radius: var(--radius-pill);
+            transition: all 0.25s ease;
         }
 
         .nav-links a:hover {
-            color: var(--text-heading);
-            background: rgba(255, 255, 255, 0.06);
+            color: var(--terracotta-dark);
+            background: var(--terracotta-light);
         }
 
         .nav-cta {
-            background: rgba(121, 197, 232, 0.1) !important;
-            color: var(--accent-cyan) !important;
-            border: 1px solid rgba(121, 197, 232, 0.25);
+            background: var(--sage-soft) !important;
+            color: #3b4d34 !important;
+            border: 1px solid rgba(146, 157, 137, 0.4);
+            font-weight: 600 !important;
         }
 
         .nav-cta:hover {
-            background: var(--accent-cyan) !important;
-            color: var(--bg-deep) !important;
-            box-shadow: 0 0 20px var(--accent-cyan-glow);
+            background: var(--sage-leaf) !important;
+            color: #ffffff !important;
         }
 
-        /* Layout Principal */
+        /* Contenedor Principal */
         main {
             width: 100%;
-            max-width: 1140px;
+            max-width: 1080px;
             margin: 0 auto;
             padding: 3rem 2rem 5rem;
             flex: 1;
             display: flex;
             flex-direction: column;
             gap: 2.8rem;
+            position: relative;
             z-index: 1;
         }
 
-        /* Hero Avanzado */
+        /* Hero Banner Estilo Boho */
         .hero-banner {
-            position: relative;
-            background: var(--glass-surface);
-            border: 1px solid var(--glass-border);
-            border-radius: var(--radius-xl);
-            padding: 3.5rem 3rem;
-            box-shadow: var(--shadow-card);
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
+            background: rgba(255, 255, 255, 0.85);
+            border: 1px solid var(--border-organic);
+            border-radius: var(--radius-organic);
+            padding: 3.8rem 3.2rem;
+            box-shadow: var(--shadow-boho);
+            backdrop-filter: blur(8px);
             display: grid;
             grid-template-columns: 1fr auto;
             align-items: center;
             gap: 3rem;
+            position: relative;
             overflow: hidden;
         }
 
+        /* Arco decorativo boho de fondo */
         .hero-banner::before {
             content: '';
             position: absolute;
-            inset: 0;
-            background: linear-gradient(135deg, rgba(121, 197, 232, 0.05) 0%, rgba(140, 33, 85, 0.06) 100%);
+            top: -40px;
+            right: 40px;
+            width: 240px;
+            height: 320px;
+            border-radius: 120px 120px 0 0;
+            background: linear-gradient(180deg, rgba(234, 240, 231, 0.6) 0%, rgba(245, 235, 230, 0.3) 100%);
             pointer-events: none;
+            z-index: 0;
         }
 
         .hero-content {
@@ -238,342 +235,339 @@
             display: flex;
             flex-direction: column;
             gap: 1.2rem;
-            max-width: 650px;
+            max-width: 640px;
+            z-index: 1;
         }
 
         .hero-badge {
             display: inline-flex;
             align-items: center;
-            gap: 0.5rem;
-            font-size: 0.78rem;
+            gap: 0.6rem;
+            font-size: 0.8rem;
             font-weight: 600;
-            letter-spacing: 0.8px;
+            letter-spacing: 1.2px;
             text-transform: uppercase;
-            color: var(--accent-cyan);
-            background: rgba(121, 197, 232, 0.08);
-            border: 1px solid rgba(121, 197, 232, 0.2);
-            padding: 0.35rem 0.9rem;
-            border-radius: 24px;
+            color: var(--terracotta-dark);
+            background: var(--terracotta-light);
+            border: 1px solid rgba(194, 120, 92, 0.25);
+            padding: 0.4rem 1rem;
+            border-radius: var(--radius-pill);
             width: fit-content;
         }
 
-        .hero-badge::before {
-            content: '';
-            width: 7px;
-            height: 7px;
-            border-radius: 50%;
-            background: var(--accent-cyan);
-            box-shadow: 0 0 8px var(--accent-cyan);
-        }
-
         .hero-title {
-            font-family: 'Syne', sans-serif;
-            font-size: 2.7rem;
-            font-weight: 800;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 3.2rem;
+            font-weight: 600;
             line-height: 1.15;
-            letter-spacing: -1px;
-            color: var(--text-heading);
+            color: var(--text-title);
+            letter-spacing: -0.5px;
         }
 
-        .hero-title span {
-            background: linear-gradient(135deg, #ffffff 40%, var(--accent-cyan) 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+        .hero-title em {
+            font-style: italic;
+            font-weight: 400;
+            color: var(--terracotta);
         }
 
         .hero-description {
-            font-size: 1.12rem;
+            font-size: 1.1rem;
             color: var(--text-body);
+            line-height: 1.85;
             font-weight: 400;
-            line-height: 1.7;
         }
 
-        /* Avatar del Hero con Carita Feliz */
+        /* Avatar Boho Cálido con Carita Feliz */
         .hero-visual {
             position: relative;
+            z-index: 1;
             display: flex;
             align-items: center;
             justify-content: center;
         }
 
-        .avatar-aura {
-            position: relative;
+        .boho-arch-frame {
             width: 140px;
-            height: 140px;
+            height: 190px;
+            border-radius: 70px 70px 24px 24px;
+            background: linear-gradient(180deg, #f7ebe4 0%, #efe1d8 100%);
+            border: 2px solid rgba(194, 120, 92, 0.35);
             display: flex;
+            flex-direction: column;
             align-items: center;
             justify-content: center;
-            border-radius: 50%;
-            background: linear-gradient(145deg, rgba(140, 33, 85, 0.25), rgba(30, 68, 102, 0.35));
-            border: 1px solid rgba(174, 212, 230, 0.25);
-            box-shadow: 0 0 50px rgba(121, 197, 232, 0.15), inset 0 0 25px rgba(255, 255, 255, 0.05);
-            animation: floatOrb 6s ease-in-out infinite;
+            box-shadow: 0 12px 30px rgba(194, 120, 92, 0.15);
+            position: relative;
+            animation: floatGently 6s ease-in-out infinite;
         }
 
-        .avatar-aura::after {
+        .boho-arch-frame::after {
             content: '';
             position: absolute;
-            inset: -8px;
-            border-radius: 50%;
-            border: 1px dashed rgba(121, 197, 232, 0.3);
-            animation: spinRing 25s linear infinite;
+            inset: -6px;
+            border-radius: 76px 76px 30px 30px;
+            border: 1px dashed rgba(146, 157, 137, 0.5);
+            pointer-events: none;
         }
 
         .avatar-emoji {
-            font-size: 4rem;
+            font-size: 3.8rem;
             line-height: 1;
-            user-select: none;
-            filter: drop-shadow(0 8px 18px rgba(0, 0, 0, 0.45));
+            filter: drop-shadow(0 6px 12px rgba(124, 74, 54, 0.15));
             transition: transform 0.3s ease;
+            user-select: none;
         }
 
-        .avatar-aura:hover .avatar-emoji {
-            transform: scale(1.12) rotate(6deg);
+        .boho-arch-frame:hover .avatar-emoji {
+            transform: scale(1.1) rotate(5deg);
         }
 
-        @keyframes floatOrb {
+        .boho-botanical-tag {
+            font-size: 0.72rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            color: var(--sage-leaf);
+            margin-top: 0.8rem;
+        }
+
+        @keyframes floatGently {
             0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-9px); }
+            50% { transform: translateY(-7px); }
         }
 
-        @keyframes spinRing {
-            from { transform: rotate(0deg); }
-            to { transform: rotate(360deg); }
-        }
-
-        /* Grid de Contenido Principal */
+        /* Layout en Grilla */
         .content-grid {
             display: grid;
             grid-template-columns: 2fr 1fr;
-            gap: 2rem;
+            gap: 2.2rem;
             align-items: start;
         }
 
-        /* Tarjeta Estilizada */
+        /* Tarjeta Panel Boho */
         .panel {
-            background: var(--glass-surface);
-            border: 1px solid var(--glass-border);
-            border-radius: var(--radius-xl);
-            padding: 2.6rem;
-            box-shadow: var(--shadow-card);
-            backdrop-filter: blur(16px);
-            -webkit-backdrop-filter: blur(16px);
-            transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
-            position: relative;
-            overflow: hidden;
+            background: rgba(255, 255, 255, 0.88);
+            border: 1px solid var(--border-organic);
+            border-radius: var(--radius-organic);
+            padding: 3rem 2.8rem;
+            box-shadow: var(--shadow-boho);
+            backdrop-filter: blur(8px);
+            transition: all 0.3s ease;
         }
 
         .panel:hover {
-            border-color: var(--glass-border-highlight);
-            box-shadow: var(--shadow-glow), var(--shadow-card);
+            box-shadow: var(--shadow-hover);
             transform: translateY(-3px);
+            border-color: rgba(194, 120, 92, 0.35);
         }
 
         .panel-header {
             display: flex;
             align-items: center;
-            justify-content: space-between;
+            gap: 1rem;
             margin-bottom: 1.8rem;
             padding-bottom: 1.2rem;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-        }
-
-        .panel-title-group {
-            display: flex;
-            align-items: center;
-            gap: 0.9rem;
+            border-bottom: 1px solid rgba(194, 120, 92, 0.15);
         }
 
         .panel-icon-wrap {
-            width: 42px;
-            height: 42px;
-            border-radius: var(--radius-md);
-            background: rgba(121, 197, 232, 0.08);
-            border: 1px solid rgba(121, 197, 232, 0.2);
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            background: var(--terracotta-light);
+            border: 1px solid rgba(194, 120, 92, 0.25);
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 1.2rem;
-            color: var(--accent-cyan);
+            font-size: 1.25rem;
+            color: var(--terracotta-dark);
         }
 
         .panel h2 {
-            font-family: 'Syne', sans-serif;
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: var(--text-heading);
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.95rem;
+            font-weight: 600;
+            color: var(--text-title);
             letter-spacing: -0.3px;
         }
 
         .panel-body p {
-            font-size: 1.05rem;
+            font-size: 1.08rem;
             color: var(--text-body);
-            line-height: 1.8;
-            margin-bottom: 1.2rem;
+            line-height: 1.9;
+            margin-bottom: 1.3rem;
         }
 
         .panel-body p:last-child {
             margin-bottom: 0;
         }
 
-        /* Métricas / Highlights Integrados */
+        /* Métricas / Pilares Orgánicos */
         .metrics-row {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 1rem;
-            margin: 2rem 0 1.5rem;
-            padding-top: 1.5rem;
-            border-top: 1px solid rgba(255, 255, 255, 0.06);
+            gap: 1.2rem;
+            margin: 2.2rem 0 1.8rem;
+            padding-top: 1.8rem;
+            border-top: 1px dashed rgba(194, 120, 92, 0.2);
         }
 
         .metric-card {
-            background: rgba(255, 255, 255, 0.03);
-            border: 1px solid rgba(255, 255, 255, 0.06);
-            border-radius: var(--radius-md);
-            padding: 1.1rem 1rem;
+            background: var(--card-subtle);
+            border: 1px solid rgba(194, 120, 92, 0.12);
+            border-radius: 18px;
+            padding: 1.2rem 1rem;
             text-align: center;
         }
 
         .metric-num {
-            font-family: 'Syne', sans-serif;
-            font-size: 1.35rem;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.6rem;
             font-weight: 700;
-            color: var(--accent-cyan);
-            margin-bottom: 0.2rem;
+            color: var(--terracotta-dark);
+            margin-bottom: 0.15rem;
         }
 
         .metric-label {
-            font-size: 0.75rem;
+            font-size: 0.76rem;
             text-transform: uppercase;
-            letter-spacing: 0.6px;
+            letter-spacing: 0.8px;
             color: var(--text-muted);
+            font-weight: 500;
         }
 
-        /* Tags de Competencias */
+        /* Tags / Hojas Botánicas */
         .tags-wrapper {
             display: flex;
             flex-wrap: wrap;
             gap: 0.65rem;
-            margin-top: 1.8rem;
+            margin-top: 2rem;
         }
 
         .tag {
-            font-size: 0.8rem;
+            font-size: 0.82rem;
             font-weight: 500;
-            color: #dbeafe;
-            background: rgba(121, 197, 232, 0.08);
-            border: 1px solid rgba(121, 197, 232, 0.16);
-            padding: 0.4rem 0.9rem;
-            border-radius: 30px;
-            transition: all 0.2s ease;
+            color: var(--warm-clay);
+            background: #fbf5ef;
+            border: 1px solid rgba(194, 120, 92, 0.2);
+            padding: 0.45rem 1rem;
+            border-radius: var(--radius-pill);
+            transition: all 0.25s ease;
         }
 
         .tag:hover {
-            background: rgba(121, 197, 232, 0.16);
-            border-color: var(--accent-cyan);
+            background: var(--terracotta);
             color: #ffffff;
+            border-color: var(--terracotta);
         }
 
-        /* Columna Lateral (Contacto & Perfil) */
+        /* Sidebar & Contacto */
         .sidebar {
             display: flex;
             flex-direction: column;
-            gap: 1.8rem;
+            gap: 2rem;
         }
 
         .contact-card {
-            background: linear-gradient(160deg, rgba(14, 23, 38, 0.8) 0%, rgba(20, 34, 56, 0.85) 100%);
-            border: 1px solid var(--glass-border-highlight);
-            border-radius: var(--radius-xl);
-            padding: 2.2rem;
-            box-shadow: var(--shadow-card);
-            backdrop-filter: blur(16px);
+            background: rgba(255, 255, 255, 0.92);
+            border: 1px solid var(--border-organic);
+            border-radius: var(--radius-organic);
+            padding: 2.4rem 2.2rem;
+            box-shadow: var(--shadow-boho);
             display: flex;
             flex-direction: column;
             gap: 1.3rem;
+            position: relative;
+        }
+
+        .availability-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.78rem;
+            color: #3b5233;
+            background: var(--sage-soft);
+            border: 1px solid rgba(146, 157, 137, 0.35);
+            padding: 0.4rem 0.9rem;
+            border-radius: var(--radius-pill);
+            width: fit-content;
+            font-weight: 500;
+        }
+
+        .availability-pill::before {
+            content: '';
+            width: 7px;
+            height: 7px;
+            border-radius: 50%;
+            background: var(--sage-leaf);
+        }
+
+        .contact-card h2 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.85rem;
+            font-weight: 600;
+            color: var(--text-title);
         }
 
         .contact-btn {
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 0.7rem;
-            background: linear-gradient(135deg, var(--accent-cyan), #4a9ec4);
-            color: #07131d;
-            font-weight: 700;
+            gap: 0.8rem;
+            background: var(--terracotta);
+            color: #ffffff;
+            font-weight: 600;
             font-size: 0.95rem;
-            padding: 0.9rem 1.4rem;
-            border-radius: var(--radius-md);
+            padding: 0.95rem 1.4rem;
+            border-radius: var(--radius-pill);
             text-decoration: none;
-            transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
-            box-shadow: 0 8px 24px var(--accent-cyan-glow);
+            transition: all 0.25s ease;
+            box-shadow: 0 8px 20px rgba(194, 120, 92, 0.25);
         }
 
         .contact-btn:hover {
+            background: var(--terracotta-dark);
             transform: translateY(-2px);
-            filter: brightness(1.08);
-            box-shadow: 0 12px 30px rgba(121, 197, 232, 0.4);
+            box-shadow: 0 12px 26px rgba(194, 120, 92, 0.35);
         }
 
-        .availability-pill {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.55rem;
-            font-size: 0.78rem;
-            color: #86efac;
-            background: rgba(134, 239, 172, 0.08);
-            border: 1px solid rgba(134, 239, 172, 0.2);
-            padding: 0.4rem 0.85rem;
-            border-radius: 20px;
-            width: fit-content;
-        }
-
-        .availability-pill::before {
-            content: '';
-            width: 6px;
-            height: 6px;
-            border-radius: 50%;
-            background: #86efac;
-            box-shadow: 0 0 8px #86efac;
-        }
-
-        /* Footer Armonizado */
+        /* Footer Boho */
         footer {
-            border-top: 1px solid rgba(255, 255, 255, 0.07);
-            background: rgba(5, 9, 15, 0.8);
-            backdrop-filter: blur(12px);
-            padding: 2.2rem 2rem;
+            border-top: 1px solid var(--border-soft);
+            background: rgba(250, 246, 240, 0.9);
+            padding: 2.5rem 2rem;
             margin-top: auto;
         }
 
         .footer-inner {
-            max-width: 1140px;
+            max-width: 1080px;
             margin: 0 auto;
             display: flex;
             justify-content: space-between;
             align-items: center;
             flex-wrap: wrap;
             gap: 1rem;
-            font-size: 0.88rem;
+            font-size: 0.9rem;
             color: var(--text-muted);
         }
 
         .footer-inner strong {
-            color: var(--text-heading);
-            font-weight: 600;
+            color: var(--text-title);
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.15rem;
         }
 
         /* Responsive Breakpoints */
         @media (max-width: 960px) {
             .hero-banner {
                 grid-template-columns: 1fr;
-                padding: 2.8rem 2rem;
+                padding: 3rem 2rem;
                 text-align: center;
             }
 
             .hero-content {
-                max-width: 100%;
                 align-items: center;
+                max-width: 100%;
             }
 
             .content-grid {
@@ -593,25 +587,20 @@
             }
 
             main {
-                padding: 1.5rem 1rem 3rem;
-                gap: 1.8rem;
+                padding: 1.8rem 1.2rem 3rem;
+                gap: 2rem;
             }
 
             .hero-title {
-                font-size: 2rem;
+                font-size: 2.3rem;
             }
 
-            .avatar-aura {
-                width: 110px;
-                height: 110px;
-            }
-
-            .avatar-emoji {
-                font-size: 3.2rem;
+            .hero-banner {
+                padding: 2.4rem 1.4rem;
             }
 
             .panel {
-                padding: 1.8rem 1.4rem;
+                padding: 2rem 1.5rem;
             }
 
             .footer-inner {
@@ -644,46 +633,45 @@
 
     <!-- Contenido Principal -->
     <main>
-        <!-- Hero Sofisticado -->
+        <!-- Hero Boho & Sereno -->
         <section class="hero-banner" aria-labelledby="hero-heading">
             <div class="hero-content">
                 <div class="hero-badge">Investigación & Dinámicas Urbanas</div>
                 <h1 id="hero-heading" class="hero-title">
-                    Transformando datos en <span>impacto social</span>
+                    Transformando datos en <em>impacto humano</em>
                 </h1>
                 <p class="hero-description">
-                    Economista e investigadora social con perspectiva histórica. Especializada en la articulación de métodos cuantitativos rigurosos con el análisis contextual para resolver desafíos territoriales y comunitarios.
+                    Economista e investigadora social con perspectiva histórica. Un puente entre el análisis empírico riguroso y la sensibilidad comunitaria para comprender y transformar los territorios.
                 </p>
             </div>
 
             <div class="hero-visual">
-                <div class="avatar-aura" title="¡Bienvenido/a!">
+                <div class="boho-arch-frame" title="¡Te doy la bienvenida!">
                     <div class="avatar-emoji" role="img" aria-label="Carita feliz">😊</div>
+                    <span class="boho-botanical-tag">Bienvenida</span>
                 </div>
             </div>
         </section>
 
-        <!-- Grid de Contenido Complejo -->
+        <!-- Grid de Contenido -->
         <div class="content-grid">
-            <!-- Columna Principal: Experiencia y Metodología -->
+            <!-- Columna Principal: Trayectoria & Vocación -->
             <article id="experiencia" class="panel">
                 <div class="panel-header">
-                    <div class="panel-title-group">
-                        <div class="panel-icon-wrap" aria-hidden="true">📈</div>
-                        <h2>Experiencia & Trayectoria</h2>
-                    </div>
+                    <div class="panel-icon-wrap" aria-hidden="true">🌿</div>
+                    <h2>Experiencia & Perspectiva</h2>
                 </div>
 
                 <div class="panel-body">
                     <p>
-                        Su trayectoria se consolida en la intersección entre la ciencia económica y la comprensión histórica. Su labor principal se orienta al diseño, recolección y análisis de datos empíricos que permiten decodificar las dinámicas territoriales y problemáticas urbanas contemporáneas.
+                        Su trayectoria se nutre del diálogo constante entre la ciencia económica y la comprensión histórica. Su labor se concentra en decodificar el pulso de las dinámicas territoriales y los fenómenos urbanos contemporáneos a través de información precisa y contextualizada.
                     </p>
                     <p>
-                        Ha colaborado activamente en múltiples proyectos de desarrollo e investigación social, integrando modelos de análisis cuantitativo con un trabajo cercano y empático junto a comunidades, asegurando que los hallazgos generen recomendaciones claras, pertinentes y de alto valor estratégico.
+                        Ha colaborado activamente en diversos proyectos de desarrollo e investigación social, combinando técnicas cuantitativas sólidas con una escucha cercana a las realidades locales, con la convicción de que los datos cobran verdadero sentido cuando aportan valor tangible a las personas.
                     </p>
 
-                    <!-- Indicadores Clave -->
-                    <div class="metrics-row" aria-label="Aspectos clave de trabajo">
+                    <!-- Pilares Clave -->
+                    <div class="metrics-row" aria-label="Dimensiones de trabajo">
                         <div class="metric-card">
                             <div class="metric-num">Datos</div>
                             <div class="metric-label">Análisis Cuantitativo</div>
@@ -694,7 +682,7 @@
                         </div>
                         <div class="metric-card">
                             <div class="metric-num">Social</div>
-                            <div class="metric-label">Impacto Comunitario</div>
+                            <div class="metric-label">Vínculo Comunitario</div>
                         </div>
                     </div>
 
@@ -702,25 +690,22 @@
                         <span class="tag">Investigación Aplicada</span>
                         <span class="tag">Economía Urbana</span>
                         <span class="tag">Análisis Territorial</span>
-                        <span class="tag">Contexto Histórico</span>
+                        <span class="tag">Memoria & Historia</span>
                         <span class="tag">Políticas Públicas</span>
                     </div>
                 </div>
             </article>
 
-            <!-- Columna Lateral: Contacto & Disponibilidad -->
+            <!-- Columna Lateral: Contacto & Conexión -->
             <aside class="sidebar">
                 <div id="contacto" class="contact-card">
                     <div class="availability-pill">Disponible para proyectos</div>
-                    <div class="panel-title-group">
-                        <div class="panel-icon-wrap" aria-hidden="true">✉️</div>
-                        <h2>Conectemos</h2>
-                    </div>
-                    <p style="font-size: 0.95rem; color: var(--text-body); line-height: 1.6;">
-                        Abierta a colaboraciones en consultoría, iniciativas académicas o proyectos de impacto territorial.
+                    <h2>Conversemos</h2>
+                    <p style="font-size: 0.98rem; color: var(--text-body); line-height: 1.75;">
+                        Abierta a colaboraciones en investigación, consultorías sociales o proyectos de impacto territorial.
                     </p>
                     <a href="mailto:manuortizmarquez.mo@gmail.com" class="contact-btn">
-                        <span>Enviar correo</span>
+                        <span>Escríbeme</span>
                         <span aria-hidden="true">→</span>
                     </a>
                 </div>
