@@ -531,6 +531,130 @@
             box-shadow: 0 12px 26px rgba(194, 120, 92, 0.35);
         }
 
+        /* Sección Formulario de Contacto Boho */
+        .contact-section {
+            background: rgba(255, 255, 255, 0.9);
+            border: 1px solid var(--border-organic);
+            border-radius: var(--radius-organic);
+            padding: 3.2rem 2.8rem;
+            box-shadow: var(--shadow-boho);
+            backdrop-filter: blur(8px);
+            max-width: 760px;
+            width: 100%;
+            margin: 0 auto;
+        }
+
+        .contact-section-header {
+            text-align: center;
+            margin-bottom: 2.2rem;
+        }
+
+        .contact-section-header h2 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2.4rem;
+            font-weight: 600;
+            color: var(--text-title);
+            margin-bottom: 0.5rem;
+        }
+
+        .contact-section-header p {
+            font-size: 1.05rem;
+            color: var(--text-muted);
+        }
+
+        .boho-form {
+            display: flex;
+            flex-direction: column;
+            gap: 1.4rem;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .form-group label {
+            font-size: 0.88rem;
+            font-weight: 600;
+            color: var(--text-title);
+            letter-spacing: 0.3px;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+            font-size: 0.98rem;
+            color: var(--text-body);
+            background: #faf6f0;
+            border: 1px solid rgba(194, 120, 92, 0.25);
+            border-radius: 14px;
+            padding: 0.85rem 1.1rem;
+            outline: none;
+            transition: all 0.25s ease;
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            background: #ffffff;
+            border-color: var(--terracotta);
+            box-shadow: 0 0 0 4px rgba(194, 120, 92, 0.12);
+        }
+
+        .btn-submit {
+            align-self: flex-start;
+            background: var(--terracotta);
+            color: #ffffff;
+            font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+            font-size: 1rem;
+            font-weight: 600;
+            padding: 0.9rem 2.2rem;
+            border: none;
+            border-radius: var(--radius-pill);
+            cursor: pointer;
+            transition: all 0.25s ease;
+            box-shadow: 0 8px 20px rgba(194, 120, 92, 0.25);
+        }
+
+        .btn-submit:hover:not(:disabled) {
+            background: var(--terracotta-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 12px 26px rgba(194, 120, 92, 0.35);
+        }
+
+        .btn-submit:disabled {
+            opacity: 0.65;
+            cursor: not-allowed;
+        }
+
+        .form-status {
+            font-size: 0.92rem;
+            font-weight: 500;
+            margin-top: 0.5rem;
+            padding: 0.6rem 1rem;
+            border-radius: 10px;
+            display: none;
+        }
+
+        .form-status.success {
+            display: block;
+            background: var(--sage-soft);
+            color: #2e4a26;
+            border: 1px solid rgba(146, 157, 137, 0.4);
+        }
+
+        .form-status.error {
+            display: block;
+            background: #fdf2f0;
+            color: #9c2e1b;
+            border: 1px solid rgba(220, 80, 60, 0.3);
+        }
+
         /* Footer Boho */
         footer {
             border-top: 1px solid var(--border-soft);
@@ -711,6 +835,34 @@
                 </div>
             </aside>
         </div>
+
+        <!-- Sección Formulario de Contacto -->
+        <section id="formulario-contacto" class="contact-section" aria-labelledby="form-heading">
+            <div class="contact-section-header">
+                <h2 id="form-heading">Envíame un mensaje</h2>
+                <p>Déjame tus datos y me pondré en contacto contigo lo antes posible.</p>
+            </div>
+
+            <form id="contact-form" class="boho-form">
+                <div class="form-group">
+                    <label for="nombre">Nombre</label>
+                    <input type="text" id="nombre" name="nombre" placeholder="Tu nombre completo" required autocomplete="name">
+                </div>
+
+                <div class="form-group">
+                    <label for="correo">Correo</label>
+                    <input type="email" id="correo" name="correo" placeholder="tu.correo@ejemplo.com" required autocomplete="email">
+                </div>
+
+                <div class="form-group">
+                    <label for="mensaje">Mensaje</label>
+                    <textarea id="mensaje" name="mensaje" placeholder="Cuéntame sobre tu proyecto o consulta..." required></textarea>
+                </div>
+
+                <button type="submit" id="submit-btn" class="btn-submit">Enviar</button>
+                <div id="contact-status" class="form-status" role="status" aria-live="polite"></div>
+            </form>
+        </section>
     </main>
 
     <!-- Footer -->
@@ -720,6 +872,9 @@
             <p>Economía, Historia & Territorio</p>
         </div>
     </footer>
+
+    <!-- Firebase App JS Module -->
+    <script type="module" src="app.js"></script>
 
 </body>
 
