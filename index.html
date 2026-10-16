@@ -4,14 +4,43 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Manuela Ortiz Márquez</title>
+    <meta name="description" content="Portafolio profesional de Manuela Ortiz Márquez - Economista e historiadora orientada a la investigación social y análisis territorial.">
+    <title>Manuela Ortiz Márquez | Economista & Investigadora Social</title>
 
-    <!-- Google Fonts: Plus Jakarta Sans (fresca, moderna y legible) -->
+    <!-- Google Fonts: Plus Jakarta Sans -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
     <style>
+        :root {
+            --bg-base: #4a1516;
+            --bg-gradient: radial-gradient(circle at 15% 20%, #681f21 0%, #401213 100%);
+            
+            --nav-bg: rgba(174, 212, 230, 0.94);
+            --nav-text: #0f2430;
+            --nav-accent: #8c2155;
+
+            --hero-bg: linear-gradient(135deg, #0b1928 0%, #172d42 50%, #1e3a53 100%);
+            --hero-border: #AED4E6;
+            
+            --card-bg: rgba(175, 117, 149, 0.22);
+            --card-border: rgba(255, 255, 255, 0.14);
+            --card-solid: #8b4c70;
+
+            --accent-cyan: #AED4E6;
+            --accent-cyan-hover: #cbe6f5;
+            --accent-berry: #8c2155;
+            --text-main: #ffffff;
+            --text-muted: #e2d6dd;
+            
+            --radius-lg: 18px;
+            --radius-md: 12px;
+            --radius-sm: 8px;
+            --shadow-subtle: 0 10px 30px rgba(0, 0, 0, 0.25);
+            --shadow-hover: 0 16px 40px rgba(0, 0, 0, 0.35);
+        }
+
         * {
             box-sizing: border-box;
             margin: 0;
@@ -24,141 +53,361 @@
 
         body {
             font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
-            background-color: #5C1A1B;
-            color: #ffffff;
+            background: var(--bg-base);
+            background-image: var(--bg-gradient);
+            background-attachment: fixed;
+            color: var(--text-main);
             min-height: 100vh;
             display: flex;
             flex-direction: column;
+            line-height: 1.6;
             -webkit-font-smoothing: antialiased;
         }
 
-        /* Nav (#AED4E6) */
+        /* Header & Navbar con Glassmorphism */
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            background-color: var(--nav-bg);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+            transition: all 0.3s ease;
+        }
+
         nav {
-            background-color: #AED4E6;
-            width: 100%;
-            padding: 1.1rem 1.5rem;
+            max-width: 1080px;
+            margin: 0 auto;
+            padding: 1rem 1.5rem;
             display: flex;
-            flex-direction: column;
-            gap: 0.8rem;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+            justify-content: space-between;
+            align-items: center;
+            gap: 1rem;
         }
 
         .nav-logo {
-            font-size: 1.25rem;
-            font-weight: 700;
-            color: #1a3340;
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            font-size: 1.15rem;
+            font-weight: 800;
+            color: var(--nav-text);
             text-decoration: none;
-            letter-spacing: -0.3px;
+            letter-spacing: -0.4px;
+        }
+
+        .nav-logo-badge {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 32px;
+            height: 32px;
+            background: #1a3340;
+            color: #ffffff;
+            border-radius: 8px;
+            font-size: 0.85rem;
+            font-weight: 700;
         }
 
         .nav-links {
             list-style: none;
             display: flex;
-            gap: 1.2rem;
+            align-items: center;
+            gap: 0.5rem;
         }
 
         .nav-links a {
             text-decoration: none;
-            color: #1a3340;
+            color: var(--nav-text);
             font-weight: 600;
-            font-size: 0.95rem;
-            transition: color 0.2s ease;
-        }
-
-        .nav-links a:hover {
-            color: #8c2155;
-        }
-
-        /* Contenedor principal a lo ancho */
-        main {
-            width: 100%;
-            padding: 2rem 1.5rem;
-            flex: 1;
-        }
-
-        /* Divs (#AF7595) */
-        .seccion-div {
-            background-color: #AF7595;
-            color: #ffffff;
-            width: 100%;
-            padding: 2rem 1.8rem;
-            margin-bottom: 1.8rem;
-            border-radius: 12px;
-            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
-            scroll-margin-top: 110px;
-        }
-
-        .seccion-div h2 {
-            margin-bottom: 1rem;
-            font-size: 1.5rem;
-            font-weight: 700;
-            letter-spacing: -0.3px;
-            border-bottom: 2px solid rgba(174, 212, 230, 0.45);
-            padding-bottom: 0.4rem;
-            display: inline-block;
-        }
-
-        .seccion-div p {
-            font-size: 1.05rem;
-            line-height: 1.7;
-            font-weight: 400;
-            color: #fdf5f9;
-        }
-
-        .seccion-div p + p {
-            margin-top: 1rem;
-        }
-
-        .seccion-div a {
-            color: #AED4E6;
-            text-decoration: none;
-            font-weight: 600;
-            border-bottom: 1px dashed #AED4E6;
-            padding-bottom: 1px;
+            font-size: 0.92rem;
+            padding: 0.5rem 0.9rem;
+            border-radius: var(--radius-sm);
             transition: all 0.2s ease;
         }
 
-        .seccion-div a:hover {
+        .nav-links a:hover {
             color: #ffffff;
-            border-bottom-style: solid;
+            background-color: var(--nav-accent);
         }
 
-        /* Footer (#8c2155) */
-        footer {
-            background-color: #8c2155;
-            color: #ffffff;
+        /* Contenedor Principal */
+        main {
             width: 100%;
-            padding: 1.5rem;
+            max-width: 1080px;
+            margin: 0 auto;
+            padding: 2.2rem 1.5rem;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: var(--hero-bg);
+            border-radius: var(--radius-lg);
+            padding: 2.5rem 2rem;
+            border: 1px solid rgba(174, 212, 230, 0.25);
+            border-left: 6px solid var(--accent-cyan);
+            box-shadow: var(--shadow-subtle);
+            display: grid;
+            grid-template-columns: auto 1fr;
+            align-items: center;
+            gap: 1.8rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            top: -50px;
+            right: -50px;
+            width: 160px;
+            height: 160px;
+            background: radial-gradient(circle, rgba(174, 212, 230, 0.15) 0%, transparent 70%);
+            border-radius: 50%;
+            pointer-events: none;
+        }
+
+        .hero-avatar-wrapper {
+            position: relative;
+        }
+
+        .hero-emoji {
+            font-size: 3rem;
+            line-height: 1;
+            width: 80px;
+            height: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(174, 212, 230, 0.12);
+            border: 2px solid rgba(174, 212, 230, 0.3);
+            border-radius: 50%;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+            animation: softPulse 3.5s infinite ease-in-out;
+            user-select: none;
+        }
+
+        @keyframes softPulse {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.05);
+            }
+        }
+
+        .hero-info {
+            display: flex;
+            flex-direction: column;
+            gap: 0.6rem;
+        }
+
+        .hero-tag {
+            align-self: flex-start;
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--accent-cyan);
+            background: rgba(174, 212, 230, 0.1);
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            border: 1px solid rgba(174, 212, 230, 0.2);
+        }
+
+        .hero h1 {
+            font-size: 1.8rem;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+            color: #ffffff;
+            line-height: 1.25;
+        }
+
+        .hero p {
+            font-size: 1.05rem;
+            color: #d1dbe6;
+            max-width: 680px;
+            font-weight: 400;
+        }
+
+        /* Secciones de Contenido */
+        .seccion-card {
+            background: var(--card-solid);
+            background: linear-gradient(145deg, rgba(162, 85, 126, 0.85) 0%, rgba(130, 56, 95, 0.9) 100%);
+            border-radius: var(--radius-lg);
+            padding: 2.2rem 2rem;
+            border: 1px solid var(--card-border);
+            box-shadow: var(--shadow-subtle);
+            scroll-margin-top: 90px;
+            transition: transform 0.25s ease, box-shadow 0.25s ease;
+        }
+
+        .seccion-card:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .seccion-header {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            margin-bottom: 1.3rem;
+            padding-bottom: 0.75rem;
+            border-bottom: 2px solid rgba(174, 212, 230, 0.3);
+        }
+
+        .seccion-icon {
+            font-size: 1.4rem;
+        }
+
+        .seccion-card h2 {
+            font-size: 1.55rem;
+            font-weight: 700;
+            letter-spacing: -0.3px;
+            color: #ffffff;
+        }
+
+        .seccion-body p {
+            font-size: 1.05rem;
+            line-height: 1.75;
+            color: #faeef5;
+            font-weight: 400;
+        }
+
+        .seccion-body p + p {
+            margin-top: 1.1rem;
+        }
+
+        /* Badges / Chips de Enfoque */
+        .pill-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.6rem;
+            margin-top: 1.4rem;
+        }
+
+        .pill {
+            font-size: 0.82rem;
+            font-weight: 600;
+            background: rgba(255, 255, 255, 0.15);
+            color: #ffffff;
+            padding: 0.35rem 0.85rem;
+            border-radius: 20px;
+            backdrop-filter: blur(4px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        /* Tarjeta de Contacto Interactiva */
+        .contact-box {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1.2rem;
+            background: rgba(0, 0, 0, 0.18);
+            border: 1px solid rgba(174, 212, 230, 0.25);
+            padding: 1.2rem 1.4rem;
+            border-radius: var(--radius-md);
+            margin-top: 1rem;
+        }
+
+        .contact-mail-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: #ffffff;
+            background: rgba(174, 212, 230, 0.25);
+            border: 1px solid var(--accent-cyan);
+            padding: 0.65rem 1.2rem;
+            border-radius: var(--radius-sm);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: all 0.25s ease;
+        }
+
+        .contact-mail-link:hover {
+            background: var(--accent-cyan);
+            color: var(--nav-text);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--accent-berry);
+            color: rgba(255, 255, 255, 0.85);
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 1.8rem 1.5rem;
             text-align: center;
-            font-size: 0.95rem;
+            font-size: 0.92rem;
             font-weight: 500;
-            letter-spacing: 0.2px;
             margin-top: auto;
         }
 
-        /* Responsive a pantallas medianas y grandes */
-        @media (min-width: 600px) {
+        footer strong {
+            color: #ffffff;
+        }
+
+        /* Adaptación Responsive */
+        @media (max-width: 640px) {
             nav {
-                flex-direction: row;
-                justify-content: space-between;
-                align-items: center;
-                padding: 1.2rem 3rem;
+                flex-direction: column;
+                gap: 0.8rem;
+                padding: 0.9rem 1rem;
             }
 
+            .hero {
+                grid-template-columns: 1fr;
+                text-align: center;
+                gap: 1.2rem;
+                padding: 2rem 1.4rem;
+                border-left-width: 4px;
+            }
+
+            .hero-avatar-wrapper {
+                margin: 0 auto;
+            }
+
+            .hero-tag {
+                align-self: center;
+            }
+
+            .hero h1 {
+                font-size: 1.45rem;
+            }
+
+            .hero p {
+                font-size: 0.98rem;
+            }
+
+            .seccion-card {
+                padding: 1.6rem 1.3rem;
+            }
+
+            .contact-box {
+                flex-direction: column;
+                align-items: stretch;
+                text-align: center;
+            }
+
+            .contact-mail-link {
+                justify-content: center;
+            }
+        }
+
+        @media (min-width: 641px) and (max-width: 900px) {
             main {
-                padding: 2.5rem 3rem;
+                padding: 2rem;
             }
 
-            .seccion-div {
-                padding: 2.5rem 2.5rem;
-            }
-
-            .seccion-div h2 {
-                font-size: 1.7rem;
-            }
-
-            .seccion-div p {
-                font-size: 1.1rem;
+            .hero {
+                padding: 2.2rem 1.8rem;
             }
         }
     </style>
@@ -166,32 +415,75 @@
 
 <body>
 
-    <!-- Nav (#AED4E6) -->
-    <nav>
-        <a href="#" class="nav-logo">Manuela Ortiz Márquez</a>
-        <ul class="nav-links">
-            <li><a href="#experiencia">Experiencia</a></li>
-            <li><a href="#contacto">Datos de contacto</a></li>
-        </ul>
-    </nav>
+    <!-- Header con navegación sticky -->
+    <header>
+        <nav aria-label="Navegación principal">
+            <a href="#" class="nav-logo" aria-label="Inicio">
+                <span class="nav-logo-badge">MO</span>
+                <span>Manuela Ortiz Márquez</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="#experiencia">Experiencia</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
 
-    <!-- Contenido -->
+    <!-- Contenedor Principal -->
     <main>
-        <div id="experiencia" class="seccion-div">
-            <h2>Experiencia</h2>
-            <p>Economista e historiadora orientada a la investigación social. Su trabajo se enfoca en el análisis de datos y contextos para comprender dinámicas territoriales y problemáticas urbanas.</p>
-            <p>Cuenta con experiencia en diversos proyectos sociales, combinando el análisis cuantitativo con una mirada cercana a las realidades comunitarias, con el objetivo de generar información clara, útil y aplicable.</p>
-        </div>
+        <!-- Sección Hero Integrada -->
+        <section class="hero" aria-labelledby="hero-title">
+            <div class="hero-avatar-wrapper">
+                <div class="hero-emoji" role="img" aria-label="Carita feliz sonriente">😊</div>
+            </div>
+            <div class="hero-info">
+                <span class="hero-tag">Investigación & Análisis Social</span>
+                <h1 id="hero-title">¡Hola! Te doy la bienvenida</h1>
+                <p>Economista e investigadora social con enfoque en dinámicas territoriales, análisis cuantitativo y desarrollo de información estratégica con sentido humano.</p>
+            </div>
+        </section>
 
-        <div id="contacto" class="seccion-div">
-            <h2>Datos de contacto</h2>
-            <p>Puedes comunicarte a través del correo electrónico: <a href="mailto:manuortizmarquez.mo@gmail.com">manuortizmarquez.mo@gmail.com</a></p>
-        </div>
+        <!-- Sección de Experiencia -->
+        <article id="experiencia" class="seccion-card">
+            <div class="seccion-header">
+                <span class="seccion-icon" aria-hidden="true">📊</span>
+                <h2>Experiencia</h2>
+            </div>
+            <div class="seccion-body">
+                <p>Economista e historiadora orientada a la investigación social. Su trabajo se enfoca en el análisis de datos y contextos para comprender dinámicas territoriales y problemáticas urbanas.</p>
+                <p>Cuenta con experiencia en diversos proyectos sociales, combinando el análisis cuantitativo con una mirada cercana a las realidades comunitarias, con el objetivo de generar información clara, útil y aplicable.</p>
+                
+                <div class="pill-container" aria-label="Áreas de especialidad">
+                    <span class="pill">Análisis Territorial</span>
+                    <span class="pill">Investigación Social</span>
+                    <span class="pill">Datos Cuantitativos</span>
+                    <span class="pill">Enfoque Comunitario</span>
+                </div>
+            </div>
+        </article>
+
+        <!-- Sección de Contacto -->
+        <article id="contacto" class="seccion-card">
+            <div class="seccion-header">
+                <span class="seccion-icon" aria-hidden="true">✉️</span>
+                <h2>Datos de contacto</h2>
+            </div>
+            <div class="seccion-body">
+                <p>¿Tienes una iniciativa de investigación, consulta o propuesta de colaboración? Puedes escribirme directamente:</p>
+                
+                <div class="contact-box">
+                    <a href="mailto:manuortizmarquez.mo@gmail.com" class="contact-mail-link">
+                        <span aria-hidden="true">📧</span>
+                        <span>manuortizmarquez.mo@gmail.com</span>
+                    </a>
+                </div>
+            </div>
+        </article>
     </main>
 
-    <!-- Footer (#8c2155) -->
+    <!-- Pie de página -->
     <footer>
-        <p>Manuela Ortiz Márquez</p>
+        <p>© 2026 <strong>Manuela Ortiz Márquez</strong> — Economista e Historiadora</p>
     </footer>
 
 </body>
